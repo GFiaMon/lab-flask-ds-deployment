@@ -1,0 +1,13 @@
+services:
+  insurance-app:
+    build: .
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./models:/app/models        # These are documented
+      - ./insurance_frontend:/app/insurance_frontend
+    environment:
+      - FLASK_ENV=production        # These are documented
+    restart: unless-stopped
+
+    
